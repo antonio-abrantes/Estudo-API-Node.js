@@ -18,23 +18,27 @@ app.get('/', function (req, res) {
 app.get('/users', function(req, res) {
     var data = [
         {
-            id: 1,
-            name: 'Antônio Abrantes',
-            age: 32
-        },
-        {
-            id: 2,
-            name: 'Ana Paula',
-            age: 25
-        },
-        {
-            id: 3,
-            name: 'Fulano de Tal',
-            age: 32
+            users : [
+                {
+                    id: 1,
+                    name: 'Antônio Abrantes',
+                    age: 32
+                },
+                {
+                    id: 2,
+                    name: 'Ana Paula',
+                    age: 25
+                },
+                {
+                    id: 3,
+                    name: 'Fulano de Tal',
+                    age: 32
+                }
+            ]
         }
     ];
 
-    res.send(JSON.stringify(data));
+    res.send(JSON.stringify(data[0]['users']));
 });
 
 app.get('/user/:id/:name/:age', function(req, res) {
